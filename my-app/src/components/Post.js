@@ -1,11 +1,12 @@
 const Post = (props) => {
+    const { id, title, summary, publishedAt, newsSite } = props.post
     return(
-        <div class='postContainer'>
-            <div class='postTextContainer'>
-                <span class='keywords'>KEYWORDS</span>
-                <p class='newsArticle'>NEWS ARTICLE SUMMARY</p>
-                <span class='publishDate'>DATE PUBLISHED</span>
-                <span class='postSite'>WEBSITE</span>
+        <div className='postContainer' key={id}>
+            <div className='postTextContainer'>
+                <h1 className='articleTitle'>{title}</h1>
+                <p className='newsArticle'>{summary}</p>
+                <span className='publishDate'>{publishedAt}</span>
+                <span className='postSite'>{newsSite}</span>
             </div>
         </div>
     )

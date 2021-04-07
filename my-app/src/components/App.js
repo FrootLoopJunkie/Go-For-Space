@@ -1,27 +1,35 @@
 import React, {Component} from 'react';
 import ListOfPosts from './ListOfPosts'
 
+
 class App extends Component {
   constructor(props){
     super(props)
 
     this.state = {
       searchInput : null,
-      posts : ['1', '2'],
+      posts : [],
       isLoading : 'True'
     }
 
     this.componentDidMount = this.componentDidMount.bind(this)
+    this.getPosts = this.getPosts.bind(this)
   }
 
   componentDidMount(){
     this.setState({
       isLoading : 'False'
     })
+    this.getPosts();
   }
 
-  getData(dataToRequest){
-    //This will call to the express server to request the data it has stored
+  async getPosts(dataToRequest){
+    console.log('Getting Posts...')
+    const result = await fetch('http://localhost:8000/api')
+    const resultObject = await result.json();
+    this.setState({
+      posts : resultObject
+    })
   }
 
   render(){

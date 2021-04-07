@@ -1,9 +1,15 @@
 const Express = require('express');
+const cors = require('cors')
+const getFromAPI = require('./getFromAPI')
 const app = Express();
 const PORT = 8000;
 
-app.get('/api', (req, res) => {
-    console.log('This is the API')
+app.use(cors())
+
+app.get('/api', async (req, res) => {
+    res.status(200)
+    const result = await getFromAPI();
+    res.json(result.data);
 })
 
 app.listen(PORT, () => {
