@@ -8,13 +8,46 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#feedContainer{
+#container{
   display : flex;
   flex-direction: column;
   align-items: center;
+}
+
+#topBar{
+  position: fixed;
+  width: 100vw;
+  height : 5vh;
+  background : #2b3038;
+}
+
+#loginContainer{
+  position: fixed;
+  top : 1vh;
+  left : 1vw;
+}
+
+#searchbar{
+  position: fixed;
+  left: 50%;
+  transform: translate(-55%, 20%);
+  height : 3vh;
+  width : 25vw;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#appTitle{
+  position : relative;
+  bottom : 2vh;
+  color : #eeeeee;
+  text-align: center;
+}
+
+#feedContainer{
   width : 38%;
   height : 100vh;
-  padding : 0% 2%;
+  padding : 0 2%;
   border-radius: 10px;
   margin: 0 auto;
 }
@@ -24,27 +57,42 @@ body {
 }
 
 .postContainer{
-  background: #393e46;
+  background: #2b3038;
   border-radius: 10px;
   margin: 3%;
-  padding: 2%;
+  padding: 2% 0;
   text-align: center;
 }
 
 .articleTitle{
   color: #00adb5;
+  cursor: pointer;
+  padding : 0% 2%;
+}
+
+.articleTitle:hover{
+  color: #00767c;
+  cursor: pointer;
+}
+
+.image{
+  width : 100%;
 }
 
 .publishDate{
+  flex: 1 1 auto;
   color: #00adb5;
 }
 
 .postSite{
+  display: inline;
   color: #00adb5;
+  margin: 2%;
 }
 
 .newsArticle{
   color: #eeeeee;
+  padding : 0% 2%;
 }
 
 
