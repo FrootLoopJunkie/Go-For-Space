@@ -121,8 +121,8 @@ class App extends Component {
 
   async createAccount(){
     try {
-      console.log('loging in')
-      const result = await fetch(`http://localhost:8000/api/createaccount`, {
+      console.log('Creating Account')
+      const result = await fetch(`http://localhost:8000/api/account`, {
         method : 'POST',
         mode: 'cors',
         headers: {
